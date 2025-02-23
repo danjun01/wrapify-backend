@@ -52,6 +52,7 @@ async def get_access_token(request, data: AuthCode):
             'grant_type': 'authorization_code',
             'code': data.code,
             'redirect_uri': REDIRECT_URI,
+            'scope': 'user-top-read',
         }
         headers = {
             'Authorization': 'Basic ' + base64.b64encode(f'{SPOTIFY_CLIENT_ID}:{SPOTIFY_CLIENT_SECRET}'.encode('utf-8')).decode(),
